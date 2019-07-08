@@ -8,7 +8,7 @@
       "./scripts/customizer.js"
     ]
   },
-  "publicPath": "/aris/wp-content/themes/aris",
+  "publicPath": "/aris/wp-content/themes/camper_park",
   "devUrl": "http://localhost/aris",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
