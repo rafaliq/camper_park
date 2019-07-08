@@ -16,6 +16,10 @@
     background-position: bottom;
   }
 
+  &--color {
+    background-color: $gray-light;
+  }
+
   &--map {
     margin-top: ($gutter * 10);
   }

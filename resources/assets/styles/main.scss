@@ -21,7 +21,6 @@
 
 // components
 @import "common/global";
-@import "layouts/preloader";
 @import "components/buttons";
 @import "components/container";
 @import "components/comments";
@@ -34,12 +33,14 @@
 @import "components/submenu.scss";
 
 // layouts
+@import "layouts/typography";
+@import "layouts/boxes-img";
+@import "layouts/preloader";
 @import "layouts/header";
 @import "layouts/sidebar";
 @import "layouts/footer";
 @import "layouts/pages";
 @import "layouts/posts";
-@import "layouts/typography";
 @import "layouts/slider";
 @import "layouts/hero";
 @import "layouts/text-img";

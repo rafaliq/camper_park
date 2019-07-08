@@ -25,13 +25,33 @@
 }
 
 .title {
-  @include cssLock("font-size", 360, 1470, (30, 45));
+  @include cssLock("font-size", 360, 1470, (30, 40));
 
   font-family: $font-title;
-  color: $black;
   font-weight: $bold-black;
+  text-transform: uppercase;
+  display: block;
 
   @extend %text;
+
+  &--small {
+    @include cssLock("font-size", 360, 1470, (20, 28));
+
+    text-transform: capitalize;
+  }
+
+  &--center {
+    text-align: center;
+
+    &::after {
+      content: "";
+      display: block;
+      background: $primary-light;
+      width: gutter(10);
+      height: gutter(0.5);
+      margin: gutter(2) auto;
+    }
+  }
 }
 
 .subtitle {

@@ -1,4 +1,4 @@
-<h2 class="section_title title title--center">
+<h2 class="section__title title title--center">
 	{{ $title  }}
 </h2>
 

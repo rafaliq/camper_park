@@ -21,6 +21,9 @@
     {{-- hero --}}
     @includeWhen($sectionName == 'hero', 'partials.hero', ['data' => $section])
 
+    {{-- Boxes img --}}
+    @includeWhen($sectionName == 'boxesImg', 'partials.boxes-img', ['data' => $section])
+
     {{-- TEXT / IMG --}}
     @includeWhen($sectionName == 'textImg', 'partials.text-img', ['data' => $section])
 

@@ -5,7 +5,7 @@
         <img class="text-img__image" src="{{ $data['image']['url'] }}" alt="{{ $data['image']['alt'] }}">
       </div>
       <div class="col-12 col-md-6 text-img__content content-block py-0">
-        <div class="text">
+        <div>
           @if($data['header'] == 'tak')
           <h2 class="section__title">
             <span class="title">
@@ -18,9 +18,9 @@
             @endif  
           </h2>
           @endif
-          <p class="text">
+          <div class="text">
             {!! $data['content'] !!}
-          </p>
+          </div>
         </div>
         @if ($data['button'] == "tak")
         <a href="{{ $data['link'] }}" class="button button--big">więcej</a>
