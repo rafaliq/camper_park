@@ -16,7 +16,7 @@
   }
 
   &__image {
-    width: 95%;
+    width: 100%;
     margin-top: $gutter * 2;
 
     @include media(">=sm") {
@@ -30,9 +30,11 @@
   &__content {
     order: 0;
     align-self: center;
+    padding: gutter(1) gutter(7);
 
     @include media("<md") {
-      margin-bottom: $gutter * 2;
+      margin-bottom: gutter(2);
+      padding: gutter(1) gutter(1.5);
       order: -1;
     }
   }
