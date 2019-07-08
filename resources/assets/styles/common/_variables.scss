@@ -1,0 +1,66 @@
+/** Import Bootstrap functions */
+@import "~bootstrap/scss/functions";
+
+// tab colors
+$theme-colors: (
+  primary: #58b579,
+  secondary: #f9d9c7,
+  bg: #f7f7f7,
+  light: #f3f3f3,
+  dark: #262a2c,
+  gray_dark: #716d6c,
+  gray: #eee,
+  white: #fff,
+  black: #000
+);
+
+// colors
+$primary: #58b579;
+$secondary: #f9d9c7;
+$bg: #f7f7f7;
+$light: #e9e9e9;
+$dark: #262a2c;
+$gray_dark: #716d6c;
+$gray: #eee;
+$white: #fff;
+$black: #000;
+
+// font weight
+$regular: 400;
+$bold: 700;
+$bold-black: 900;
+
+// font family
+$font-main: "PT Sans";
+$font-title: "Lato";
+
+// media
+$breakpoints: (
+  "xs": 320px,
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px
+);
+
+// gutter
+$gutter: 10px;
+$gutter-2: ($gutter * 2);
+$gutter-3: ($gutter * 3);
+$gutter-4: ($gutter * 4);
+$gutter-5: ($gutter * 5);
+
+@function gutter($x) {
+  @return $gutter * $x;
+}
+
+// border
+$line: 1px solid rgba($white, 0.2);
+$line-dark: 1px solid rgba($black, 0.2);
+
+// animation
+$transition: 0.3s;
+
+/** Bootstrap navbar fix (https://git.io/fADqW) */
+$navbar-dark-toggler-icon-bg: none;
+$navbar-light-toggler-icon-bg: none;

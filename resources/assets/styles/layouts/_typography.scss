@@ -1,0 +1,55 @@
+%text {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+
+.headline {
+  @include cssLock("font-size", 360, 1920, (40, 90));
+
+  font-family: $font-title;
+  color: $white;
+  font-weight: $bold-black;
+
+  @extend %text;
+}
+
+.subheadline {
+  @include cssLock("font-size", 360, 1470, (30, 50));
+
+  font-family: $font-title;
+  color: $white;
+  font-weight: $bold-black;
+
+  @extend %text;
+}
+
+.text {
+  @include cssLock("font-size", 360, 1470, (12, 16));
+
+  font-family: $font-main;
+  color: $black;
+  font-weight: $regular;
+
+  @extend %text;
+
+  &--white {
+    color: $white;
+  }
+
+  &--bold {
+    font-weight: $bold;
+  }
+
+  &--primary {
+    color: $primary;
+  }
+
+  &--left {
+    text-align: left;
+  }
+
+  &--center {
+    text-align: center;
+  }
+}
