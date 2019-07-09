@@ -2,7 +2,7 @@
   color: $black;
   font-size: 1rem;
   font-family: $font-main;
-  padding: 0 $gutter*2;
+  padding: 0 gutter(2);
   line-height: 35px;
   border: 3px solid $primary-light;
   display: inline-block;

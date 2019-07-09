@@ -9,12 +9,12 @@ $config = (object) [
     'wrapper' => ['width' => 30],
 ];
 
-$services = new FieldsBuilder('services', ['label' => 'Usługi']);
+$boxesText = new FieldsBuilder('boxes-text', ['label' => 'boxy z tekstem']);
 
-$services
-    ->addRepeater('services', ['min' => 0, 'layout' => 'block', 'label' => 'Usługa'])
+$boxesText
+    ->addRepeater('boxes', ['min' => 0, 'layout' => 'block', 'label' => 'Box'])
       ->addText('header', ['label' => 'Tytuł'])
       ->addTextarea('desc', ['rows' => '3', 'label' => 'Opis'])
       ->addPageLink('link', ['type' => 'page_link', ['label' => 'Link']]);
 
-return $services;
+return $boxesText;

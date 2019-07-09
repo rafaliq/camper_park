@@ -19,7 +19,7 @@
     color: $white;
     cursor: pointer;
     background-color: #3b5998;
-    padding: $gutter ($gutter * 2);
+    padding: gutter(1) gutter(2);
     align-self: flex-start;
   }
 }

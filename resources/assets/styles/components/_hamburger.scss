@@ -2,8 +2,8 @@
   position: relative;
   border: 0;
   background: transparent;
-  width: $gutter * 4;
-  height: $gutter * 3;
+  width: gutter(4);
+  height: gutter(3);
   cursor: pointer;
   $root: &;
 
