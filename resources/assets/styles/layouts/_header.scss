@@ -1,6 +1,6 @@
 .header {
   color: $white;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   letter-spacing: 1px;
   width: 100%;
   z-index: 900;
@@ -48,10 +48,10 @@
     width: 100%;
     max-width: 0;
     height: 100vh;
-    background-color: $white;
-    border-left: $gutter solid $primary;
+    background-color: $primary;
+    border-left: $gutter solid $primary-light;
     z-index: 10;
-    right: -$gutter * 2;
+    right: - gutter(2);
     transition: $transition;
     overflow: auto;
 
