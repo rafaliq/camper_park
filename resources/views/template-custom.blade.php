@@ -11,7 +11,7 @@
   @if($sections)
   @foreach ($sections as $section)
     @php ($sectionName = $section['acf_fc_layout']) @endphp
-      @include('partials.' . $sectionName, ['data'=>$section])
+      @include('components.' . $sectionName, ['data'=>$section])
     @endforeach
   @endif
 
