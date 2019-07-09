@@ -9,7 +9,7 @@ $config = (object) [
     'wrapper' => ['width' => 30],
 ];
 
-$boxesImg = new FieldsBuilder('boxesImg', ['label' => 'boxy ze zdjęciami']);
+$boxesImg = new FieldsBuilder('boxes-img', ['label' => 'boxy ze zdjęciami']);
 
 $boxesImg
     ->addFields(get_field_partial('components.title'))

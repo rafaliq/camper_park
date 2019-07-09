@@ -9,7 +9,7 @@ $config = (object) [
     'wrapper' => ['width' => 30],
 ];
 
-$headerSection = new FieldsBuilder('headerSection');
+$headerSection = new FieldsBuilder('header-section');
 
 $headerSection
     ->addRadio('header', ['title'=>'Pokaż tytuł sekcji?'])

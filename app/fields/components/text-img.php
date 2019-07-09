@@ -9,7 +9,7 @@ $config = (object) [
     'wrapper' => ['width' => 30],
 ];
 
-$textImg = new FieldsBuilder('textImg', ['label' => 'Zdjęcie z tekstem']);
+$textImg = new FieldsBuilder('text-img', ['label' => 'Zdjęcie z tekstem']);
 
 $textImg
     ->addFields(get_field_partial('components.title'))

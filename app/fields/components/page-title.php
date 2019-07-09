@@ -9,6 +9,6 @@ $config = (object) [
     'wrapper' => ['width' => 30],
 ];
 
-$pageTitle = new FieldsBuilder('pageTitle', ['label' => 'Nagłówek']);
+$pageTitle = new FieldsBuilder('page-title', ['label' => 'Nagłówek']);
 
 return $pageTitle;
