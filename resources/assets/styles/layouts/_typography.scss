@@ -55,13 +55,24 @@
 }
 
 .subtitle {
-  @include cssLock("font-size", 360, 1470, (19, 23));
+  @include cssLock("font-size", 360, 1470, (14, 16));
 
   font-family: $font-title;
-  color: $primary;
-  font-weight: $bold-black;
+  color: $black;
+  font-weight: $regular;
+  text-align: center;
+  margin: auto;
+  max-width: gutter(80);
 
   @extend %text;
+
+  &--special {
+    @include cssLock("font-size", 360, 1470, (19, 23));
+
+    font-family: $font-title;
+    color: $primary;
+    font-weight: $bold-black;
+  }
 }
 
 .text {

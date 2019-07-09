@@ -12,7 +12,7 @@
               {{ $data['title'] }}
             </span>
             @if($data['subtitle']) 
-              <span class="section__title subtitle">
+              <span class="section__title subtitle subtitle--special">
                 {{ $data['subtitle'] }}
               </span>
             @endif  

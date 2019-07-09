@@ -3,7 +3,7 @@
 </h2>
 
 @if($subtitle)
-<p class="subtitle">
+<p class="section__title subtitle">
 	{{ $subtitle  }}
 </p>
 @endif
