@@ -6,21 +6,19 @@
 @import "node_modules/include-media/dist/include-media.scss";
 @import "~flickity/css/flickity.css";
 @import "~animate.css";
-@import "scss-lock/css-lock";
-@import "scss-lock/get-name-of-property";
-@import "scss-lock/get-value";
-@import "scss-lock/strip-unit";
+@import "vendors/scss-lock/css-lock";
 
 //common
 @import "common/variables";
 @import "common/mixins";
+@import "common/functions";
 @import "common/helpers";
+@import "common/global";
 
 /** Import everything from autoload */
 @import "./autoload/**/*";
 
 // components
-@import "common/global";
 @import "components/buttons";
 @import "components/container";
 @import "components/comments";
@@ -39,8 +37,6 @@
 @import "layouts/header";
 @import "layouts/sidebar";
 @import "layouts/footer";
-@import "layouts/pages";
-@import "layouts/posts";
 @import "layouts/slider";
 @import "layouts/hero";
 @import "layouts/text-img";

@@ -54,10 +54,6 @@ $gutter-3: ($gutter * 3);
 $gutter-4: ($gutter * 4);
 $gutter-5: ($gutter * 5);
 
-@function gutter($x) {
-  @return $gutter * $x;
-}
-
 // border
 $line: 1px solid rgba($white, 0.2);
 $line-dark: 1px solid rgba($black, 0.2);
