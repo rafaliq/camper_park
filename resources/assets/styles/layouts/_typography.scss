@@ -15,7 +15,7 @@
 }
 
 .subheadline {
-  @include cssLock("font-size", 360, 1470, (30, 50));
+  @include cssLock("font-size", 360, 1470, (20, 50));
 
   font-family: $font-title;
   color: $white;

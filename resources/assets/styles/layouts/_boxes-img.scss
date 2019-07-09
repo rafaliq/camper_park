@@ -1,4 +1,8 @@
 .boxes-img {
+  &__box {
+    margin: gutter(2) 0;
+  }
+
   &__img {
     width: 100%;
     height: gutter(35);

@@ -13,23 +13,27 @@
 
   &__content {
     position: absolute;
-    display: block;
     top: 35%;
-    left: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 4%;
+    width: 100%;
+    text-align: center;
+    margin: auto;
     z-index: 500;
   }
 
   &__header {
     background-color: rgba($black, 0.7);
     padding: gutter(1) gutter(2);
+    position: relative;
   }
 
   &__subheader {
+    @include cssLock("bottom", 360, 1920, (-40, -80));
+
     background-color: rgba($primary, 0.7);
     padding: gutter(1) gutter(2);
     position: absolute;
-    right: -5%;
+    right: - gutter(4);
+    //bottom: - gutter(6);
   }
 }

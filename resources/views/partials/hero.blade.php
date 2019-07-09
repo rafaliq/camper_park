@@ -3,9 +3,9 @@
     <h1>
       <span class="hero__header headline">
         {{ $data['header'] }}
-      </span>
-      <span class="hero__subheader subheadline">
-        {{ $data['subheader'] }}
+        <span class="hero__subheader subheadline">
+            {{ $data['subheader'] }}
+          </span>
       </span>
     </h1>
   </div>
