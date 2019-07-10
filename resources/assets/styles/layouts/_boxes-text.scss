@@ -1,6 +1,6 @@
 .boxes-text {
   &__item {
-    margin-bottom: ($gutter * 3);
+    margin-bottom: gutter(3);
   }
 
   &__title {
@@ -8,7 +8,7 @@
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
-    padding: ($gutter * 3) 0 ($gutter * 2);
+    padding: gutter(3) 0 gutter(2);
   }
 
   &__desc {
@@ -22,7 +22,7 @@
     font-weight: 400;
     font-size: 15px;
     display: block;
-    padding: ($gutter * 2) 0 0;
+    padding: gutter(2) 0 0;
 
     i {
       font-size: 14px;

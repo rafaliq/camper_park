@@ -5,7 +5,7 @@
   text-align: left;
   line-height: 20px;
   color: $white;
-  padding: $gutter * 3 0;
+  padding: gutter(3) 0;
 
   @include media("<md") {
     text-align: center;
@@ -18,7 +18,9 @@
     display: flex;
 
     @include media("<md") {
-      margin-bottom: $gutter-4;
+      margin-bottom: gutter(4);
+      text-align: center;
+      justify-content: center;
     }
   }
 

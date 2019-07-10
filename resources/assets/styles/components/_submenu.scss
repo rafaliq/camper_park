@@ -2,7 +2,7 @@
   display: none;
   list-style-type: none;
   text-align: center;
-  margin: ($gutter * 2) 0;
+  margin: gutter(2) 0;
   padding: 0;
   border-top: $line;
   border-bottom: $line;
@@ -24,10 +24,10 @@
   .menu-item {
     margin: 0;
     padding: 0;
-    padding-right: $gutter *2;
+    padding-right: gutter(2);
 
     a {
-      padding: ($gutter * 1.5) ($gutter * 2);
+      padding: gutter(1.5) gutter(2);
       display: block;
       color: $light;
       width: 100%;

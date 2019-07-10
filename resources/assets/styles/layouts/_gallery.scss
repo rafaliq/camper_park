@@ -1,8 +1,8 @@
 .gallery {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: $gutter * 1.5;
-  margin-top: $gutter;
+  grid-gap: gutter(1.5);
+  margin-top: gutter(1);
 
   a {
     position: relative;

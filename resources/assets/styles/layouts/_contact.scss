@@ -8,11 +8,13 @@
     align-items: center;
     text-align: center;
     flex-wrap: wrap;
-    padding: ($gutter * 2);
+    padding: gutter(2);
+    flex-direction: column;
 
     @include media(">=md") {
       flex-wrap: nowrap;
       text-align: left;
+      flex-direction: row;
     }
   }
 
@@ -34,7 +36,7 @@
     }
 
     @include media(">=md") {
-      margin: 0 ($gutter * 2) ($gutter * 1.5) 5px;
+      margin: 0 gutter(2) gutter(1.5) 5px;
     }
   }
 

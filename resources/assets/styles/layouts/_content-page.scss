@@ -5,12 +5,12 @@
 }
 
 .content-page {
-  max-width: $gutter * 110;
-  margin: $gutter * 8 auto;
+  max-width: gutter(110);
+  margin: gutter(8) auto;
 
   .has-medium-font-size {
-    margin-top: $gutter-3;
-    margin-bottom: $gutter-2;
+    margin-top: gutter(3);
+    margin-bottom: gutter(2);
   }
 
   p {
@@ -18,15 +18,15 @@
   }
 
   ol {
-    margin-top: $gutter * 3;
-    padding-inline-start: $gutter * 2;
+    margin-top: gutter(3);
+    padding-inline-start: gutter(2);
   }
 
   ul,
   ol {
     li {
-      padding-top: $gutter / 2;
-      padding-bottom: $gutter / 2;
+      padding-top: gutter(0.5);
+      padding-bottom: gutter(0.5);
     }
   }
 }
