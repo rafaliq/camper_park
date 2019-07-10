@@ -1,7 +1,11 @@
 .hero {
   position: relative;
-  height: 110vh;
+  height: 100vh;
   color: $white;
+
+  &--small {
+    height: 40vh;
+  }
 
   &__bg {
     position: absolute;
@@ -9,6 +13,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  &__cloud {
+    @extend %absolute;
+    @extend %image;
+
+    top: unset;
   }
 
   &__content {
@@ -33,6 +44,6 @@
     background-color: rgba($primary, 0.7);
     padding: gutter(1) gutter(2);
     position: absolute;
-    right: - gutter(4);
+    right: -(gutter(4));
   }
 }

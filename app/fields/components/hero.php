@@ -12,6 +12,7 @@ $config = (object) [
 $hero = new FieldsBuilder('hero', ['label' => 'hero']);
 
 $hero
+    ->addTrueFalse('small', ['label'=>'Małe hero?'])
     ->addImage('image', ['label' => 'Tło'])
     ->AddText('header', ['label' => 'tytuł'])
     ->addText('subheader', ['label' => 'podtytuł']);

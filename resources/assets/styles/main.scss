@@ -14,6 +14,7 @@
 @import "common/functions";
 @import "common/helpers";
 @import "common/global";
+@import "common/extends";
 
 /** Import everything from autoload */
 @import "./autoload/**/*";

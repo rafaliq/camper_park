@@ -1,5 +1,5 @@
 <header class="header" header>
-  <div class="container-fluid">
+  <div class="container">
     <div class="row header__row">
       @if(get_option_field("logo"))
         <a class="header__brand col-auto" href="{{ home_url('/') }}">

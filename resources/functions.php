@@ -102,3 +102,7 @@ if( function_exists('acf_add_options_page') ) {
 function get_option_field($var) {
     return get_field($var, 'option');
 }
+
+function image($id, $size, $class) {
+    return wp_get_attachment_image($id, $size, '', ['class'=>$class]);
+}
