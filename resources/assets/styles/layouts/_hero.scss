@@ -4,7 +4,7 @@
   color: $white;
 
   &--small {
-    height: 40vh;
+    height: 60vh;
   }
 
   &__bg {
@@ -25,11 +25,14 @@
   &__content {
     position: absolute;
     top: 35%;
-    right: 4%;
     width: 100%;
     text-align: center;
     margin: auto;
     z-index: 500;
+
+    @include media("<=md") {
+      transform: scale(0.8);
+    }
   }
 
   &__header {

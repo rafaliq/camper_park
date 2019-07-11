@@ -1,7 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-  @include('partials.page-header')
+
+  @php
+      $hero = array(
+        'header' => 'Atrakcje', 
+        'small' => true
+      );
+  @endphp
+
+
+  @include('components.hero', ['data'=>$hero]);
 
   @if (!have_posts())
     <div class="alert alert-warning">
@@ -10,9 +19,27 @@
     {!! get_search_form(false) !!}
   @endif
 
-  @while (have_posts()) @php the_post() @endphp
-    @include('partials.content-'.get_post_type())
-  @endwhile
+@if (have_posts())
 
-  {!! get_the_posts_navigation() !!}
+  <section class="section">
+    <div class="container">
+        <div class="row boxes-img">
+
+          @while (have_posts()) @php the_post() @endphp
+
+            <div class="col-md-4">
+              @include('partials.content-'.get_post_type())
+            </div>
+
+          @endwhile
+
+        </div>
+    </div>
+  </section>
+
+  @endif
+
+
 @endsection
+
+

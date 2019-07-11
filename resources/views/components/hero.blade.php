@@ -2,22 +2,24 @@
     $header = $data['header'];
     $subheader = $data['subheader'];
     $small = $data['small'];
+    $image = $data['image'];
 
     if($small)  $class = 'hero--small';
 @endphp
-
 <section class="hero {{ $class }}">
   <div class="hero__content">
     <h1>
       <span class="hero__header headline">
         {{ $header }}
-        <span class="hero__subheader subheadline">
+        @if ($subheader)
+          <span class="hero__subheader subheadline">
             {{ $subheader }}
           </span>
+        @endif
       </span>
     </h1>
   </div>
-  @if(!$small)
+  @if(!$small || $small &&  $image == null)
   <video class="hero__bg" playsinline="" autoplay="" muted="" loop="" poster="{{ $data['image']['url'] }}">
     <source src="@asset('images/aris.mp4')" type="video/mp4">
   </video>
