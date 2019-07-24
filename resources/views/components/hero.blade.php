@@ -1,5 +1,5 @@
 @php
-    $header = $data['header'];
+    $header = $data['header'] ? $data['header'] : get_the_title();
     $subheader = $data['subheader'];
     $small = $data['small'];
     $image = $data['image'];
@@ -9,7 +9,7 @@
 <section class="hero {{ $class }}">
   <div class="hero__content">
     <h1>
-      <span class="hero__header headline">
+      <span class="hero__header @if(strlen($header) > 15) title @else headline @endif">
         {{ $header }}
         @if ($subheader)
           <span class="hero__subheader subheadline">

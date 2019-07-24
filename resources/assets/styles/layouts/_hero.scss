@@ -39,6 +39,7 @@
     background-color: rgba($black, 0.7);
     padding: gutter(1) gutter(2);
     position: relative;
+    display: inline !important;
   }
 
   &__subheader {

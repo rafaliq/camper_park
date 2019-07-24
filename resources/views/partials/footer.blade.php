@@ -62,3 +62,7 @@
     </div>
   </div>
 </footer>
+
+<script>
+  $('.blocks-gallery-item a').attr('data-fancybox', 'gallery');
+</script>

@@ -109,4 +109,4 @@ function image($id, $size, $class)
     return wp_get_attachment_image($id, $size, '', ['class' => $class]);
 }
 
-add_image_size('medium', 450, 350, true);
+add_image_size('post_thumbnail', 450, 350, true);
