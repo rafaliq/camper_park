@@ -17,6 +17,7 @@ import header from './components/header';
 import submenu from './components/submenu';
 import slider from './components/slider';
 import preloader from './components/preloader';
+import calendar from './components/calendar';
 
 
 /** Populate Router instance with DOM routes */
@@ -36,6 +37,7 @@ jQuery(document).ready(() => {
   submenu.init();
   preloader.init();
   hamburger.init();
+  calendar.init();
   //new WOW.WOW.init();
   if($('.main-carousel').length) {
     slider.init();
