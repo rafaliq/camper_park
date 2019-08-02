@@ -4,6 +4,7 @@ const CONFIG = {
     MONTH: 'data-calendar-month',
     CELL: 'data-calendar-cell',
     CELL_LABEL: 'data-calendar-cell-label',
+    CHANGE_MONTH: 'data-calendar-change-month',
   },
   MONTHS: ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'],
   DAYS: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
@@ -17,9 +18,11 @@ const calendar = {
     this.body = document.querySelector(`[${ELEMENTS.BODY}]`);
     this.monthLabel = document.querySelector(`[${ELEMENTS.MONTH}]`);
     this.cell = document.querySelectorAll(`[${ELEMENTS.CELL}]`);
+    this.monthChange = document.querySelectorAll(`[${ELEMENTS.CHANGE_MONTH}]`);
 
     // store date objects
     this.currentDate = new Date();
+    this.currentMonth;
 
     // label data
     this.cellSelector = ELEMENTS.CELL_LABEL;
@@ -28,6 +31,33 @@ const calendar = {
 
     // function execution
     this.createMonth();
+    this.addEvents();
+
+    // log data
+    console.log(this.currentDate);
+    
+  },
+
+  addEvents() {
+    for (const elem of this.monthChange) {
+      elem.addEventListener('click', event => {
+        // label data
+        const direction = event.currentTarget.dataset.calendarChangeMonth;
+
+        // Set new month
+        if(direction === 'next') {
+          this.currentDate.setMonth(this.currentDate.getMonth() + 1);
+        }
+
+        else {
+          this.currentDate.setMonth(this.currentDate.getMonth() - 1);
+        }
+
+        this.createMonth();
+      
+        console.log('thisMonth', this.currentDate);
+      })
+    }
   },
 
   createMonth(date = this.currentDate) {
@@ -39,18 +69,21 @@ const calendar = {
     myData.month = date.getMonth();
     myData.day = date.getDate();
     myData.endpoints = this.monthEndpoints(myData);
-    myData.start = this.days.indexOf(myData.endpoints.first);
 
     // function execution
-    this.changeMonth(myData.month);
+    this.changeDate(myData.month, myData.year);
     this.fillDays(myData.endpoints.first, myData.endpoints.last);
 
     // output in console
     console.log(myData)
   },
 
-  changeMonth(month) {
-    this.monthLabel.innerText = this.months[month - 1];
+  changeDate(month, year) {
+    // set current month as object param
+    this.currentMonth = month;
+
+    // change current month text
+    this.monthLabel.innerText = `${this.months[month]} ${year}`;
   },
 
   monthEndpoints(date) {
@@ -69,7 +102,7 @@ const calendar = {
 
   fillDays(start, end) {
     // label data
-    let day = 28;
+    let day = end;
 
     this.cell.forEach((elem, index) => {
       // label data
@@ -77,14 +110,20 @@ const calendar = {
 
       // modify value
       if(index == start) day = 0;
-      if(day == end) day = 0;
+      
 
-      if(index > start && index <= end) {
+      if(index >= start && index < end + start) {
         elem.classList.add('calendar__cell--month');
+      }
+
+      else {
+        elem.classList.remove('calendar__cell--month');
       }
 
       day++;
       label.innerText = day < 10 ? `0${day}` : day;
+
+      if(day == end) day = 0;
 
       
       // output in console

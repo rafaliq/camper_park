@@ -20,7 +20,7 @@
 
   &__body {
     display: grid;
-    grid-template-rows: repeat(6, $gutter * 7);
+    grid-template-rows: repeat(6, $gutter * 10);
   }
 
   &__row {
@@ -49,6 +49,7 @@
     border-top: 0;
     border-bottom: 0;
     opacity: 0.6;
+    position: relative;
 
     &:nth-child(7n + 1) {
       border-left: 0;
@@ -74,5 +75,30 @@
       background-color: lighten($primary, 42%);
       opacity: 1;
     }
+  }
+
+  &__places {
+    @include cssLock("padding-bottom", 360, 1920, (5, 10));
+    @include cssLock("padding-left", 360, 1920, (10, 20));
+    @include cssLock("padding-right", 360, 1920, (10, 20));
+
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  &__place {
+    @include cssLock("margin", 360, 1920, (2, 4));
+
+    padding: ($gutter * 0.1) ($gutter * 0.1);
+    font-size: $gutter;
+    width: $gutter * 2.5;
+    border: 1px solid color(dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
