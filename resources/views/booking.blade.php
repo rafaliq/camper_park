@@ -9,10 +9,14 @@
 <section class="booking">
   <div class="container">
     <div class="row">
-      @include('components.calendar')
+      @if ($_GET['from'] && $_GET['to'])
+        @include('components.places')
+      @else
+        @include('components.calendar')
+      @endif
     </div>
   </div>
 </section>
- 
+
 
 @endsection

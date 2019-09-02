@@ -8,6 +8,8 @@
   display: inline-block;
   border-radius: gutter(50);
   margin: gutter(2) 0;
+  background: transparent;
+  cursor: pointer;
 
   &:hover {
     color: $white;

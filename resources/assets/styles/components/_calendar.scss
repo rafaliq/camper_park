@@ -8,6 +8,23 @@
 
   &__nav {
     @include cssLock("padding-bottom", 360, 1920, (5, 10));
+
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $gutter * 2;
+  }
+
+  &__label {
+    padding: $gutter;
+    border: 0;
+    border-bottom: 2px solid $primary;
+    display: inline-block;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__header {
@@ -59,10 +76,6 @@
       border-right: 0;
     }
 
-    &:hover {
-      background-color: lighten($primary, 35%);
-    }
-
     &--header {
       @include cssLock("font-size", 360, 1920, (14, 18));
       @include cssLock("padding-top", 360, 1920, (20, 36));
@@ -74,6 +87,15 @@
     &--month {
       background-color: lighten($primary, 42%);
       opacity: 1;
+
+      &:hover {
+        background-color: lighten($primary, 35%);
+      }
+    }
+
+    &--selected {
+      background-color: $primary !important;
+      color: $light;
     }
   }
 
@@ -100,5 +122,46 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  &__button {
+    @extend .button;
+    @extend .button--big;
+
+    cursor: pointer;
+    background: transparent;
+    padding: $gutter;
+    width: $gutter * 3;
+    height: $gutter * 3;
+    border-radius: 100%;
+    margin: 0 $gutter/2;
+    position: relative;
+    transition: $transition;
+
+    &::before {
+      content: url("../../images/arrow.svg");
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: $gutter * 0.4;
+      margin-right: $gutter * 0.4;
+    }
+
+    &--next {
+      &::before {
+        content: url("../../images/arrow-next.svg");
+        margin-right: unset;
+        margin-left: $gutter * 0.4;
+      }
+    }
+  }
+
+  &__send {
+    margin: 0 $gutter;
   }
 }

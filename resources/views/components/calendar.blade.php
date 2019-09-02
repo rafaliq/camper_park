@@ -15,7 +15,7 @@
   $_ordres = [];
 
   foreach( $orders as $order_id ) {
-  
+
     $_order = wc_get_order( $order_id );
     $_items = $_order->get_items();
 
@@ -40,16 +40,33 @@
 
 <script>
   const orders = @php echo $_ordres_json @endphp;
-  
+
   console.log('orders: ', orders);
 </script>
 
 <div class="calendar" data-calendar>
   <nav class="calendar__nav">
-    <span class="calendar__label" data-calendar-month>
-    </span>
-    <button data-calendar-change-month="prev"><</button>
-    <button data-calendar-change-month="next">></button>
+    <div class="calendar__wrapper">
+      <span class="calendar__label" data-calendar-month>
+      </span>
+      <button class="calendar__button" data-calendar-change-month="prev"></button>
+      <button class="calendar__button calendar__button--next" data-calendar-change-month="next"></button>
+    </div>
+    <form action="./" method="GET">
+      <div class="calendar__wrapper">
+          <div class="calendar__date">
+              Od
+            <input name="from" type="date" class="calendar__label" data-calendar-input="from" data-calendar-from value="--.--.----">
+            Do
+            <input name="to" type="date" class="calendar__label" data-calendar-input="to" data-calendar-to value="--.--.----">
+          </div>
+          <button class="calendar__send button button--big" href="http://localhost:3000/aris/booking/">
+            Szukaj
+          </button>
+      </div>
+    </form>
+
+
   </nav>
   <header class="calendar__header">
     @foreach ( $days as $day )
@@ -68,13 +85,6 @@
 
         <div class="calendar__cell" data-calendar-cell>
           <span data-calendar-cell-label></span>
-          <div class="calendar__places">
-            @for ($j = 1; $j < 7; $j++)
-              <span class="calendar__place" data-calendar-place="{{ $j }}">
-                {{ $j }}
-              </span>    
-            @endfor
-          </div>
         </div>
 
       @if ( $i == 6 || $i > 6 && $i % 7 == 6)
@@ -88,4 +98,4 @@
 @dump($_ordres)
 
 
-    
+
