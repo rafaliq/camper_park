@@ -1,5 +1,6 @@
 @php
   $days = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota'];
+  $tomorow = new DateTime('tomorrow');
 @endphp
 
 <div class="calendar" data-calendar>
@@ -14,9 +15,9 @@
       <div class="calendar__wrapper">
           <div class="calendar__date">
               Od
-            <input name="from" type="date" class="calendar__label" data-calendar-input="from" data-calendar-from value="--.--.----">
+            <input name="from" type="date" class="calendar__label" min="{{ $tomorow->format('Y-m-d')}}" data-calendar-input="from" data-calendar-from value="--.--.----">
             Do
-            <input name="to" type="date" class="calendar__label" data-calendar-input="to" data-calendar-to value="--.--.----">
+            <input name="to" type="date" class="calendar__label" min="{{ $tomorow->format('Y-m-d') }}" data-calendar-input="to" data-calendar-to value="--.--.----">
           </div>
           <button class="calendar__send button button--big" href="http://localhost:3000/aris/booking/">
             Szukaj
