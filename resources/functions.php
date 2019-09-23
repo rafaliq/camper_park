@@ -102,11 +102,28 @@ if (function_exists('acf_add_options_page')) {
 function get_option_field($var)
 {
     return get_field($var, 'option');
-}
+};
 
 function image($id, $size, $class)
 {
     return wp_get_attachment_image($id, $size, '', ['class' => $class]);
-}
+};
 
 add_image_size('post_thumbnail', 450, 350, true);
+
+function allowBooking($from, $to, $fromX, $toX) {
+    $allow = 1;
+
+    $from = date($from);
+    $to = date($to);
+    $fromX = date($fromX);
+    $toX = date($toX);
+
+    if($fromX >= $from && $toX <= $to || $fromX <= $to && $toX >= $to || $fromX <= $from && $toX >= $from) {
+        $allow = 0;
+    }
+
+    // For debuging
+    // return array($allow, 'from'=>$from, 'to'=>$to, 'fromX'=>$fromX, 'toX'=>$toX);
+    return $allow;
+};

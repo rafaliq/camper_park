@@ -9,7 +9,7 @@
     ]
   },
   "publicPath": "/aris/wp-content/themes/camper_park",
-  "devUrl": "http://localhost/aris",
+  "devUrl": "http://localhost/aris/wp-content/themes/camper_park",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [

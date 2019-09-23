@@ -32,7 +32,7 @@ const calendar = {
     this.from;
     this.to;
     this.myData;
-    this.toDayDate = `${this.currentDate.getDate()}.${this.currentDate.getMonth() + 1}.${this.currentDate.getFullYear()}`;
+    this.toDayDate = `${this.currentDate.getFullYear()}-${('0' + (this.currentDate.getMonth() + 1)).slice(-2)}-${('0' + this.currentDate.getDate()).slice(-2)}`;
 
     console.log('dziś jest', this.toDayDate);
 
@@ -182,9 +182,14 @@ const calendar = {
       if (index >= first && index < last + first) {
         day++;
 
-        elem.setAttribute('data-date', `${year}-${('0' + (month + 1)).slice(-2)}-${('0' + day).slice(-2)}`);
+        const date = `${year}-${('0' + (month + 1)).slice(-2)}-${('0' + day).slice(-2)}`;
 
-        elem.classList.add('calendar__cell--month');
+        if (this.formatDateToNumber(date) > this.formatDateToNumber(this.toDayDate)) {
+          elem.setAttribute('data-date', date);
+
+          elem.classList.add('calendar__cell--month');
+        }
+
         label.innerText = day < 10 ? `0${day}` : day;
       }
 

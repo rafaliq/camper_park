@@ -18,6 +18,7 @@ import submenu from './components/submenu';
 import slider from './components/slider';
 import preloader from './components/preloader';
 import calendar from './components/calendar';
+import addToCart from './components/add-to-cart';
 
 
 /** Populate Router instance with DOM routes */
@@ -38,13 +39,23 @@ jQuery(document).ready(() => {
   preloader.init();
   hamburger.init();
   calendar.init();
+  addToCart.init();
   //new WOW.WOW.init();
-  if($('.main-carousel').length) {
+  if ($('.main-carousel').length) {
     slider.init();
   }
 
-  setTimeout(()=> {
+  setTimeout(() => {
     new WOW.WOW().init();
+
+    setTimeout(function () {
+      $('.quantity .screen-reader-text').text($('.quantity input').val());
+      if ($('#order_comments')) {
+        const dates = window.location.href.split('?')[1]
+
+        $('#order_comments').val(`${dates}`);
+      }
+    }, 300);
   }, 300)
 });
 

@@ -85,21 +85,35 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 </div>
 
-hello <?= $order->get_order_number() ?>
-
-<?php 
+<?php
 	$order_number = $order->get_order_number();
 
-	
-	$date_from = '01/02/2021';
-	$date_to = '03/04/2022';
+    $from = get_field('from', $order_number);
+    $customer_note = $order->get_customer_note();
+
+    $note_fromArray = $pieces = explode("&", $customer_note)[0];
+    $note_from = $pieces = explode("=", $note_fromArray)[1];
+
+    $note_toArray = $pieces = explode("&", $customer_note)[1];
+    $note_to = $pieces = explode("=", $note_fromArray)[1];
+
+	$date_from = $note_from;
+	$date_to = $note_to;
 
 	update_field('from', $date_from, $order_number);
 	update_field('to', $date_to, $order_number);
 
-	$from = get_field('from', $order_number);
 ?>
-<pre>
+<!-- <pre>
 	From:
-	<?php print_r($from) ;?>
-</pre>
+    <?php // print_r($note_from) ;?>
+</pre> -->
+
+<?php
+    foreach ($order->get_items() as $item) {
+        $product_id = $item['product_id'];
+        $order_update = get_field('orders', $product_id);
+        $order_update .= $date_from . ':'. $date_to . ',';
+        update_field('orders', $order_update, $product_id);
+    }
+?>

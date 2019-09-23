@@ -27,8 +27,9 @@
 @import "components/link";
 @import "components/wp-classes";
 @import "components/hr";
-@import "components/submenu.scss";
-@import "components/calendar.scss";
+@import "components/submenu";
+@import "components/calendar";
+@import "components/places";
 
 // layouts
 @import "layouts/boxes-img";
@@ -45,6 +46,7 @@
 @import "layouts/banner";
 @import "layouts/contact";
 @import "layouts/booking";
+@import "layouts/woocommerce";
 
 // blocks
 @import "blocks/post-gallery";

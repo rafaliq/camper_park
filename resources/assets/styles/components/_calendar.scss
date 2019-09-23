@@ -139,7 +139,7 @@
     transition: $transition;
 
     &::before {
-      content: url("../../images/arrow.svg");
+      content: url("../images/arrow.svg");
       position: absolute;
       left: 0;
       right: 0;
@@ -154,7 +154,7 @@
 
     &--next {
       &::before {
-        content: url("../../images/arrow-next.svg");
+        content: url("../images/arrow-next.svg");
         margin-right: unset;
         margin-left: $gutter * 0.4;
       }
