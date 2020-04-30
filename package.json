@@ -82,7 +82,7 @@
     "bootstrap": "v4.2.1",
     "flickity": "^2.2.0",
     "include-media": "^1.4.9",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "popper.js": "^1.14.6",
     "wow.js": "^1.2.2",
     "wowjs": "^1.1.3"
